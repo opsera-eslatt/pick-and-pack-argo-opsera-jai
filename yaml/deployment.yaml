@@ -1,14 +1,14 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: pick-and-pack-ns
+  name: pnp-opsera-jai-ns
   
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: pick-and-pack-deployment
-  namespace: pick-and-pack-ns
+  name: pnp-opsera-jai-deployment
+  namespace: pnp-opsera-jai-ns
 spec:
   replicas: 1
   selector:
@@ -29,9 +29,9 @@ apiVersion: v1
 kind: Service
 metadata:
   labels:
-    app.kubernetes.io/name: pick-and-pack-label
-  name: pick-and-pack-service
-  namespace: pick-and-pack-ns
+    app.kubernetes.io/name: pnp-opsera-jai-label
+  name: pnp-opsera-jai-service
+  namespace: pnp-opsera-jai-ns
 spec:
   ports:
   - name: http
